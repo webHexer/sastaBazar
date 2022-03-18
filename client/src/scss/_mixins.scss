@@ -1,0 +1,23 @@
+@mixin breakpoint-up($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin container {
+  padding: 2.4375em 2em;
+
+  @include breakpoint-up(43em) {
+    padding: 2em 3em;
+  }
+
+  @include breakpoint-up(55em) {
+    padding: 2em 5.1875em;
+  }
+}
