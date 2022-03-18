@@ -1,4 +1,6 @@
 // import {  } from 'react-router-dom';
+import React from 'react';
+import logo from '../../../public/images/logo_2x.png';
 
 const Header = () => {
   return (
@@ -8,7 +10,7 @@ const Header = () => {
           <ul>
             <li>
               <a to="/">
-                <img src="/client/public/images/logo_2x.png" alt="logo" />
+                <img src={logo} alt="logo" />
               </a>
             </li>
             <li>
