@@ -8,3 +8,43 @@ html {
 *::after {
   box-sizing: inherit;
 }
+
+// link style
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+a {
+  color: $black;
+  cursor: pointer;
+
+  &:hover {
+    color: $pink;
+  }
+}
+
+//list style
+ul {
+  list-style: none;
+}
+
+//visibility
+.hide-in-mobile {
+  @include breakpoint-down(42.936em) {
+    display: none;
+  }
+}
+
+.hide-in-tablet {
+  @include breakpoint-up(42.9374em) {
+    display: none;
+  }
+}
+
+.hide-in-desktop {
+  @include breakpoint-up(61.25em) {
+    display: none;
+  }
+}
