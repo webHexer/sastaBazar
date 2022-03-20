@@ -23,9 +23,9 @@ const Header = () => {
         <div className="overlay hide-in-desktop hide-in-tablet">
           <div className="header__menu">
             <Link to="/">Home</Link>
-            <Link to="/">Products</Link>
-            <Link to="/">Login</Link>
-            <Link to="/">SignUp</Link>
+            <Link to="/products">Products</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/signup">SignUp</Link>
           </div>
         </div>
       )}
@@ -43,7 +43,7 @@ const Header = () => {
               <Link to="/">Home</Link>
             </li>
             <li className="hide-in-mobile">
-              <Link to="/">Products</Link>
+              <Link to="/products">Products</Link>
             </li>
           </ul>
         </nav>
@@ -53,10 +53,10 @@ const Header = () => {
         <nav className="header__right-section__nav-links hide-in-mobile">
           <ul>
             <li>
-              <Link to="/">Login</Link>
+              <Link to="/login">Login</Link>
             </li>
             <li>
-              <Link to="/">SignUp</Link>
+              <Link to="/signup">SignUp</Link>
             </li>
           </ul>
         </nav>

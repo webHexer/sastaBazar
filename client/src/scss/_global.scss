@@ -30,6 +30,63 @@ ul {
   list-style: none;
 }
 
+// input box styling
+input {
+  display: block;
+  padding: 0.7rem 0;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid $black;
+}
+
+// button
+button {
+  padding: 0.7rem;
+  color: $white;
+  background-color: $pink;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+// headings
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+
+  @include breakpoint-up(43em) {
+    font-size: 2rem;
+  }
+}
+
+h2 {
+  font-size: 1rem;
+
+  @include breakpoint-up(43em) {
+    font-size: 2rem;
+  }
+}
+
+h3 {
+  font-size: 0.7rem;
+
+  @include breakpoint-up(56.25em) {
+    font-size: 0.9rem;
+  }
+}
+
+p {
+  font-size: 0.9rem;
+  color: $black;
+
+  @include breakpoint-up(43em) {
+    font-size: 1rem;
+  }
+}
+
 //visibility
 .hide-in-mobile {
   @include breakpoint-down(42.936em) {
