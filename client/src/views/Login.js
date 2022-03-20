@@ -1,9 +1,6 @@
 // react
 import React from 'react';
 
-//style
-// import '../scss/views/_login.scss';
-
 /**
  * @name Login
  * @returns JSX for Login Page
