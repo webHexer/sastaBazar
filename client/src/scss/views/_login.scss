@@ -21,27 +21,12 @@
     &__form {
       label {
         display: none;
+        transition: all 3s;
       }
+
       input {
         width: 85%;
-        margin: 0 auto 1.8rem;
-        transition: all 3s;
-
-        &:focus::placeholder {
-          color: transparent;
-        }
-
-        &:not(:placeholder-shown) + label {
-          display: block;
-          position: absolute;
-          transform: translateY(-5.2rem);
-        }
-
-        // &:focus + label {
-        //   display: block;
-        //   position: absolute;
-        //   transform: translateY(-5.2rem);
-        // }
+        margin: 0 auto 2.2rem;
 
         @include breakpoint-up(33.75rem) {
           width: 70%;

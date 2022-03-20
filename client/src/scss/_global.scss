@@ -37,6 +37,28 @@ input {
   border: none;
   outline: none;
   border-bottom: 1px solid $black;
+
+  &:focus::placeholder {
+    @include breakpoint-up(43rem) {
+      color: transparent;
+    }
+  }
+
+  &:not(:placeholder-shown) + label {
+    @include breakpoint-up(43rem) {
+      position: absolute;
+      transform: translateY(-5.2rem);
+      display: block;
+    }
+  }
+
+  &:focus + label {
+    @include breakpoint-up(43rem) {
+      position: absolute;
+      transform: translateY(-5.2rem);
+      display: block;
+    }
+  }
 }
 
 // button
