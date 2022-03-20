@@ -47,7 +47,7 @@ const SignUp = () => {
 
     // set msg type and error to notification state
     if (msg.length > 0) {
-      msg = msg.join(', ');
+      msg = msg.join(', ') + '.';
       setNotificationData({ msg: msg, type: 'error' });
     } else {
       setNotificationData({ msg: 'Account created', type: 'success' });
