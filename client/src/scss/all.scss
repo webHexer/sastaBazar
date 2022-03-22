@@ -4,9 +4,6 @@
 @import './components/layout/header';
 @import './views/login';
 @import './views/signup';
-@import './components/general/notification.scss'; // @import "animations";
-
-// @import "hero";
-// @import "intro";
-// @import "creation";
-// @import "footer";
+@import './components/general/notification.scss';
+@import './components/general/carousel.scss';
+@import './views/home';

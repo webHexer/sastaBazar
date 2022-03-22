@@ -42,9 +42,17 @@ const express = require("express");
 const app = express();
 const port = 8000;
 var indexRouter = require("./routes/index");
+var userRouter = require("./routes/users");
+const bannersRouter = require("./routes/banners");
 
 const cors = require("cors");
-app.use("/", cors(), indexRouter);
+app.use("/api", cors(), indexRouter);
+app.use("/api", cors(), userRouter);
+app.use("/api", cors(), bannersRouter);
+
+// const user = require("./data/users.json");
+
+// console.log(user);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });

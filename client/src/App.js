@@ -1,24 +1,18 @@
+// react
 import React from 'react';
-import './scss/all.scss';
-import Header from './components/layout/Header';
 import { Routes, Route } from 'react-router-dom';
+
+// components
+import Header from './components/layout/Header';
 import Home from './views/Home';
 import Products from './views/Products';
 import Login from './views/Login';
 import SignUp from './views/SignUp';
 
-const App = () => {
-  // const [data, setData] = useState('No response');
-  // useEffect(() => {
-  //   fetch('http://localhost:8000/')
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       setData(res.res);
-  //       console.log(res.res);
-  //     })
-  //     .catch((err) => console.error(err));
-  // }, []);
+// scss
+import './scss/all.scss';
 
+const App = () => {
   return (
     <div className="App">
       <Header />
@@ -27,8 +21,8 @@ const App = () => {
         <Route path="/products" element={<Products />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
-        {/* <Route path="*" element={<NoPage />} /> */}
       </Routes>
+      {/* <Route path="*" element={<NoPage />} /> */}
     </div>
   );
 };

@@ -22,10 +22,20 @@ const Header = () => {
       {showMobileMenuOverlay && (
         <div className="overlay hide-in-desktop hide-in-tablet">
           <div className="header__menu">
-            <Link to="/">Home</Link>
-            <Link to="/products">Products</Link>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">SignUp</Link>
+            <Link to="/" onClick={() => setShowMobileMenuOverlay((prevState) => !prevState)}>
+              Home
+            </Link>
+            <Link
+              to="/products"
+              onClick={() => setShowMobileMenuOverlay((prevState) => !prevState)}>
+              Products
+            </Link>
+            <Link to="/login" onClick={() => setShowMobileMenuOverlay((prevState) => !prevState)}>
+              Login
+            </Link>
+            <Link to="/signup" onClick={() => setShowMobileMenuOverlay((prevState) => !prevState)}>
+              SignUp
+            </Link>
           </div>
         </div>
       )}
