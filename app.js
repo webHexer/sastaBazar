@@ -41,14 +41,16 @@
 const express = require("express");
 const app = express();
 const port = 8000;
-var indexRouter = require("./routes/index");
-var userRouter = require("./routes/users");
+const indexRouter = require("./routes/index");
+const userRouter = require("./routes/users");
 const bannersRouter = require("./routes/banners");
+const categoriesRouter = require("./routes/categories");
 
 const cors = require("cors");
 app.use("/api", cors(), indexRouter);
 app.use("/api", cors(), userRouter);
 app.use("/api", cors(), bannersRouter);
+app.use("/api", cors(), categoriesRouter);
 
 // const user = require("./data/users.json");
 

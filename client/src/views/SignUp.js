@@ -1,5 +1,6 @@
 // react
 import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // components
 import Notification from '../components/general/Notification';
@@ -9,6 +10,7 @@ import Notification from '../components/general/Notification';
  * @returns JSX for SignUp Page
  */
 const SignUp = () => {
+  const history = useNavigate();
   // states
   const [notificationData, setNotificationData] = useState({});
 
@@ -30,7 +32,6 @@ const SignUp = () => {
     // input field validations
     if (!/^[a-zA-Z]+$/.test(firstName.current.value)) {
       msg.push('First Name should contain only alphabets');
-      console.log(msg);
     }
 
     if (!/^[a-zA-Z]+$/.test(lastName.current.value)) {
@@ -41,16 +42,20 @@ const SignUp = () => {
       msg.push('email is invalid');
     }
 
-    if (!(password.current.value === confirmPassword.current.value)) {
+    if (!/^(?=.*[a-zA-Z])(?=.*[0-9])[A-Za-z0-9]+$/.test(password.current.value)) {
+      msg.push('password should be alphanumeric and should be of atleast 6 character');
+    } else if (!(password.current.value === confirmPassword.current.value)) {
       msg.push('password and current password are not matching');
     }
 
     // set msg type and error to notification state
     if (msg.length > 0) {
       msg = msg.join(', ') + '.';
+      // to convert first character of string to upper case
+      msg = msg.charAt(0).toUpperCase() + msg.slice(1);
       setNotificationData({ msg: msg, type: 'error' });
     } else {
-      setNotificationData({ msg: 'Account created', type: 'success' });
+      history('/home');
     }
   };
 

@@ -10,9 +10,17 @@ html {
 }
 
 body {
+  position: relative;
+  min-height: calc(100vh - 3rem);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+// img
+img {
+  width: 100%;
+  max-width: 100%;
 }
 
 // link style
@@ -81,8 +89,13 @@ button {
 }
 
 // headings
-h1 {
+h1,
+h2,
+h3 {
   margin: 0;
+}
+
+h1 {
   font-size: 1.8rem;
 
   @include breakpoint-up(43em) {
@@ -91,10 +104,10 @@ h1 {
 }
 
 h2 {
-  font-size: 1rem;
+  font-size: 0.85rem;
 
   @include breakpoint-up(43em) {
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -107,7 +120,7 @@ h3 {
 }
 
 p {
-  font-size: 0.9rem;
+  font-size: 0.75rem;
   color: $black;
 
   @include breakpoint-up(43em) {

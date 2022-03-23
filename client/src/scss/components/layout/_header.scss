@@ -119,13 +119,14 @@
   }
 
   .overlay {
-    opacity: 0.6;
     position: fixed;
     top: 3.75em;
-    right: 0px;
-    bottom: 0px;
     left: 0px;
+    bottom: 0px;
+    right: 0px;
     background-color: $black;
+    opacity: 0.6;
+    z-index: 1;
 
     @include container;
   }

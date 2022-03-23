@@ -23,18 +23,18 @@ const Header = () => {
         <div className="overlay hide-in-desktop hide-in-tablet">
           <div className="header__menu">
             <Link to="/" onClick={() => setShowMobileMenuOverlay((prevState) => !prevState)}>
+              Login
+            </Link>
+            <Link to="/signup" onClick={() => setShowMobileMenuOverlay((prevState) => !prevState)}>
+              SignUp
+            </Link>
+            <Link to="/home" onClick={() => setShowMobileMenuOverlay((prevState) => !prevState)}>
               Home
             </Link>
             <Link
               to="/products"
               onClick={() => setShowMobileMenuOverlay((prevState) => !prevState)}>
               Products
-            </Link>
-            <Link to="/login" onClick={() => setShowMobileMenuOverlay((prevState) => !prevState)}>
-              Login
-            </Link>
-            <Link to="/signup" onClick={() => setShowMobileMenuOverlay((prevState) => !prevState)}>
-              SignUp
             </Link>
           </div>
         </div>
@@ -44,13 +44,13 @@ const Header = () => {
         <nav className="header__left-section__nav-links">
           <ul>
             <li>
-              <Link to="/" className="header__left-section__nav-links__logo">
+              <Link to="/home" className="header__left-section__nav-links__logo">
                 <img className="hide-in-mobile" src={mobileLogo} alt="logo" />
                 <img className="hide-in-tablet" src={desktopLogo} alt="logo" />
               </Link>
             </li>
             <li className="hide-in-mobile">
-              <Link to="/">Home</Link>
+              <Link to="/home">Home</Link>
             </li>
             <li className="hide-in-mobile">
               <Link to="/products">Products</Link>
@@ -63,7 +63,7 @@ const Header = () => {
         <nav className="header__right-section__nav-links hide-in-mobile">
           <ul>
             <li>
-              <Link to="/login">Login</Link>
+              <Link to="/">Login</Link>
             </li>
             <li>
               <Link to="/signup">SignUp</Link>

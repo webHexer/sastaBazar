@@ -1,7 +1,12 @@
 .carousel {
   position: relative;
-  box-shadow: 0 0.5px 1px 1.15px rgba($black, 0.1);
+  margin-bottom: 1.5rem;
+  box-shadow: 0px 8px 6px -6px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+
+  @include breakpoint-up(43em) {
+    margin-bottom: 3rem;
+  }
 
   &__inner {
     white-space: nowrap;
@@ -9,11 +14,16 @@
   }
 
   &__controls {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+    display: none;
+
+    @include breakpoint-up(43em) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: block;
+      width: 100%;
+    }
 
     &__buttons {
       display: flex;
@@ -53,7 +63,11 @@
 
   &__item {
     display: inline-flex;
-    height: 240px;
+    height: 140px;
     color: $white;
+
+    @include breakpoint-up(43em) {
+      height: 240px;
+    }
   }
 }

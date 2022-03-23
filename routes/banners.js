@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 
-/* GET home page. */
+/* GET banners for home page. */
 router.get("/banners", function (req, res, next) {
   const data = [
     {
@@ -40,7 +40,7 @@ router.get("/banners", function (req, res, next) {
       id: "5b6c386b6cb7d770b7010cd0",
     },
   ];
-  res.status(200).send(data);
+  res.status(200).json(data);
 });
 
 module.exports = router;

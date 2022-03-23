@@ -1,5 +1,6 @@
 // react
 import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // components
 import Notification from '../components/general/Notification';
@@ -9,6 +10,8 @@ import Notification from '../components/general/Notification';
  * @returns JSX for Login Page
  */
 const Login = () => {
+  const history = useNavigate();
+
   // states
   const [notificationData, setNotificationData] = useState({});
 
@@ -22,16 +25,25 @@ const Login = () => {
    */
   const loginHandler = (e) => {
     e.preventDefault();
-    let msg = '';
+    let msg = [];
 
     // input field validations
     if (!/^([a-z0-9]+@[a-z]+\.[a-z]{2,3})$/.test(email.current.value)) {
-      msg = msg + 'Email is invalid.';
+      msg.push('Email is invalid');
+    }
+
+    if (!/^(?=.*[a-zA-Z])(?=.*[0-9])[A-Za-z0-9]+$/.test(password.current.value)) {
+      msg.push('password is incorrect');
     }
 
     // set msg type and error to notification state
     if (msg.length > 0) {
+      msg = msg.join(' and ') + '.';
+      // to convert first character of string to upper case
+      msg = msg.charAt(0).toUpperCase() + msg.slice(1);
       setNotificationData({ msg: msg, type: 'error' });
+    } else {
+      history('/home');
     }
   };
 
