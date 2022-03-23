@@ -30,7 +30,8 @@ module.exports = {
             loader: 'file-loader'
           }
         ]
-      }
+      },
+      { test: /\.(config)$/, use: [{ loader: 'file-loader?name=[name].[ext]' }] }
     ]
   },
   plugins: [
