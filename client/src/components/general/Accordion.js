@@ -15,7 +15,7 @@ const Accordion = ({ accordionData, changeSelectedItem }) => {
   // states
   const [panelVisibility, setPanelVisibility] = useState(false);
   const [menuItems, setMenuItems] = useState(accordionData);
-  const [activeItem, setActiveItem] = useState('');
+  const [activeItem, setActiveItem] = useState('Filter');
 
   // accordion menu item builder
   useEffect(() => {
@@ -45,7 +45,10 @@ const Accordion = ({ accordionData, changeSelectedItem }) => {
       </header>
       <main className={panelVisibility ? 'accordion__body visible' : 'accordion__body'}>
         {menuItems?.map(({ id, name, active }) => (
-          <p key={id} className={active ? '.acive' : ''} onClick={() => changeSelectedItem(id)}>
+          <p
+            key={id}
+            className={active ? '.acive' : ''}
+            onClick={() => changeSelectedItem(id, name)}>
             {name}
           </p>
         ))}

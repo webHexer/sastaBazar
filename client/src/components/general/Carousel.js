@@ -112,7 +112,7 @@ const Carousel = ({ children }) => {
 };
 
 CarouselItem.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.object,
   width: PropTypes.string
 };
 

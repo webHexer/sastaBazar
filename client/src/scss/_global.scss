@@ -112,10 +112,10 @@ h2 {
 }
 
 h3 {
-  font-size: 0.7rem;
+  font-size: 0.66rem;
 
   @include breakpoint-up(56.25em) {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
   }
 }
 

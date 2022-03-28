@@ -10,7 +10,7 @@ import Notification from '../components/general/Notification';
  * @returns JSX for Login Page
  */
 const Login = () => {
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   // states
   const [notificationData, setNotificationData] = useState({});
@@ -43,7 +43,7 @@ const Login = () => {
       msg = msg.charAt(0).toUpperCase() + msg.slice(1);
       setNotificationData({ msg: msg, type: 'error' });
     } else {
-      history('/home');
+      navigate('/home');
     }
   };
 

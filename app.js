@@ -1,6 +1,6 @@
 // var createError = require('http-errors');
 // var express = require('express');
-// var path = require('path');
+var path = require("path");
 // var cookieParser = require('cookie-parser');
 // var logger = require('morgan');
 
@@ -16,7 +16,6 @@
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
 
 // app.use('/users', usersRouter);
 
@@ -45,12 +44,17 @@ const indexRouter = require("./routes/index");
 const userRouter = require("./routes/users");
 const bannersRouter = require("./routes/banners");
 const categoriesRouter = require("./routes/categories");
+const productsRouter = require("./routes/products");
+const addProductToCartRouter = require("./routes/addProductToCart");
 
 const cors = require("cors");
-app.use("/api", cors(), indexRouter);
-app.use("/api", cors(), userRouter);
-app.use("/api", cors(), bannersRouter);
-app.use("/api", cors(), categoriesRouter);
+app.use(cors());
+app.use("/api", indexRouter);
+app.use("/api", userRouter);
+app.use("/api", bannersRouter);
+app.use("/api", categoriesRouter);
+app.use("/api", productsRouter);
+app.use("/api", addProductToCartRouter);
 
 // const user = require("./data/users.json");
 

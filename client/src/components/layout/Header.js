@@ -1,6 +1,7 @@
 // react
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 // components
 import { ImCart } from 'react-icons/im';
@@ -12,7 +13,7 @@ import mobileLogo from '../../../public/images/logo.png';
 /**
  * @returns JSX for rendering Header Section
  */
-const Header = () => {
+const Header = ({ setShowCart, cartData }) => {
   // component states
   const [showMobileMenuOverlay, setShowMobileMenuOverlay] = useState(false);
 
@@ -71,9 +72,9 @@ const Header = () => {
           </ul>
         </nav>
 
-        <div className="header__right-section__cart">
+        <div className="header__right-section__cart" onClick={() => setShowCart(true)}>
           <ImCart className="header__right-section__cart__icon" />
-          <span>0 items</span>
+          <span>{cartData.length} items</span>
         </div>
 
         <button
@@ -87,6 +88,11 @@ const Header = () => {
       </section>
     </header>
   );
+};
+
+Header.propTypes = {
+  setShowCart: PropTypes.func,
+  cartData: PropTypes.array
 };
 
 export default Header;

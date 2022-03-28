@@ -1,4 +1,5 @@
 const express = require("express");
+const res = require("express/lib/response");
 const router = express.Router();
 const fs = require("fs");
 
@@ -33,7 +34,7 @@ const fs = require("fs");
 //   console.log(JSON.parse(data));
 // });
 
-const user = require("../data/users.json");
+// const user = require("../data/users.json");
 
 // console.log(user);
 
@@ -44,12 +45,12 @@ const user = require("../data/users.json");
 //   });
 // });
 
-fs.readFile("/data/users.json", "utf-8", (err, data) => {
+fs.readFile("./users.json", "utf-8", (err, data) => {
   if (err) {
     console.log(err);
   } else {
     const data = JSON.parse(data);
-
+    res.status;
     console.log(data);
   }
   console.log(data);

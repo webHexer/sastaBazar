@@ -4,8 +4,6 @@
   overflow: hidden;
   cursor: pointer;
 
-  @include container;
-
   &__header {
     display: flex;
     align-items: center;
@@ -21,7 +19,14 @@
     transform: translateY(-120%);
 
     p {
+      margin: 0;
+      padding: 0.37rem 0;
       color: $white;
+
+      &:hover {
+        background-color: $pink;
+        border-radius: 4px;
+      }
     }
   }
 }
@@ -36,6 +41,6 @@
   background-color: $lightPink;
 }
 
-.rotate {
+.rotate-icon {
   transform: rotate(180deg);
 }
